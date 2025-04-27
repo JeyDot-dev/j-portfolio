@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { Tooltip as ChakraTooltip, Portal } from "@chakra-ui/react";
 import * as React from "react";
 

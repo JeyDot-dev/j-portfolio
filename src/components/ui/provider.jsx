@@ -1,12 +1,15 @@
 "use client";
+import PropTypes from "prop-types";
 
-import { ChakraProvider, defaultSystem } from "@chakra-ui/react";
+import { ChakraProvider } from "@chakra-ui/react";
 import { ColorModeProvider } from "./color-mode";
-
-export function Provider(props) {
+export function Provider({ theme, ...props }) {
   return (
-    <ChakraProvider value={defaultSystem}>
+    <ChakraProvider value={theme}>
       <ColorModeProvider {...props} />
     </ChakraProvider>
   );
 }
+Provider.propTypes = {
+  theme: PropTypes.object.isRequired,
+};
