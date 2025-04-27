@@ -10,7 +10,7 @@ import {
   Input,
   Field,
 } from "@chakra-ui/react";
-import { ColorModeButton } from "./color-mode";
+import { ColorModeButton } from "../chakra/color-mode";
 
 const items = [
   { value: "a", title: "First Item", text: "Some value 1..." },
@@ -21,12 +21,7 @@ const items = [
 export function PlayGround() {
   return (
     <VStack>
-      {/* Navbar */}
-      <nav>
-        <h1>My Theme Test</h1>
-        <ColorModeButton>CLICK</ColorModeButton>
-        <Button>Action</Button>
-      </nav>
+      <ColorModeButton>CLICK</ColorModeButton>
       {/* Accordion */}
       <Accordion.Root collapsible defaultValue={["b"]}>
         {items.map((item, index) => (
@@ -83,31 +78,8 @@ export function PlayGround() {
           <Button>Join</Button>
         </Card.Footer>
       </Card.Root>
-      {/* Table */}
-      <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Role</th>
-            <th>Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Myuu-chan</td>
-            <td>Chaos Generator</td>
-            <td>💖 Active</td>
-          </tr>
-          <tr>
-            <td>Nyx-chan</td>
-            <td>Order Keeper</td>
-            <td>✨ Observing</td>
-          </tr>
-        </tbody>
-      </table>
-      {/* Footer */}
       <footer>
-        <p>© 2025 Johan&MyuuNyx Theme Playground</p>
+        <p>© 2025 Johan Theme Playground</p>
       </footer>
     </VStack>
   );

@@ -1,8 +1,7 @@
 "use client";
-import PropTypes from "prop-types";
 
 import { ChakraProvider } from "@chakra-ui/react";
-import { ColorModeProvider } from "./color-mode";
+import { ColorModeProvider } from "../components/chakra/color-mode";
 export function Provider({ theme, ...props }) {
   return (
     <ChakraProvider value={theme}>
@@ -10,6 +9,3 @@ export function Provider({ theme, ...props }) {
     </ChakraProvider>
   );
 }
-Provider.propTypes = {
-  theme: PropTypes.object.isRequired,
-};
