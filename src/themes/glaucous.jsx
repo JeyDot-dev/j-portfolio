@@ -10,7 +10,7 @@ const glaucousConfig = defineConfig({
     tokens: {
       colors: {
         prim: {
-          50: { value: "#D6D8E4" },
+          50: { value: "#EBEAEA" },
           100: { value: "#C9CBDC" },
           200: { value: "#BBBED3" },
           300: { value: "#A0A4C1" },
@@ -20,7 +20,7 @@ const glaucousConfig = defineConfig({
           700: { value: "#666C9B" },
           800: { value: "#5A608A" },
           900: { value: "#4F5479" },
-          950: { value: "#444868" },
+          950: { value: "#0B0C11" },
         },
         sec: {
           50: { value: "#FBECEB" },
@@ -33,10 +33,10 @@ const glaucousConfig = defineConfig({
           700: { value: "#D84238" },
           800: { value: "#C23126" },
           900: { value: "#A22920" },
-          950: { value: "#611813" },
+          950: { value: "#0D0E04" },
         },
         accent: {
-          50: { value: "#F2F3D8" },
+          50: { value: "#F1F2F6" },
           100: { value: "#EFF0D1" },
           200: { value: "#ECEEC9" },
           300: { value: "#EAEBC1" },
@@ -46,7 +46,7 @@ const glaucousConfig = defineConfig({
           700: { value: "#CFD274" },
           800: { value: "#C4C856" },
           900: { value: "#B5B93C" },
-          950: { value: "#979A32" },
+          950: { value: "#171823" },
         },
         gray: {
           50: { value: "#EBEAEA" },
@@ -99,6 +99,12 @@ const glaucousConfig = defineConfig({
               _dark: "gray.50",
             },
           },
+          bg: {
+            value: {
+              _light: "{colors.prim.50}",
+              _dark: "{colors.prim.950}",
+            },
+          },
           fg: {
             value: {
               _light: "{colors.prim.700}",
@@ -143,6 +149,12 @@ const glaucousConfig = defineConfig({
               _dark: "gray.50",
             },
           },
+          bg: {
+            value: {
+              _light: "{colors.sec.50}",
+              _dark: "{colors.sec.950}",
+            },
+          },
           fg: {
             value: {
               _light: "{colors.sec.700}",
@@ -169,8 +181,8 @@ const glaucousConfig = defineConfig({
           },
           solid: {
             value: {
-              _light: "{colors.sec.600}",
-              _dark: "{colors.sec.600}",
+              _light: "{colors.sec.500}",
+              _dark: "{colors.sec.500}",
             },
           },
           focusRing: {
@@ -187,9 +199,15 @@ const glaucousConfig = defineConfig({
               _dark: "gray.50",
             },
           },
+          bg: {
+            value: {
+              _light: "{colors.accent.50}",
+              _dark: "{colors.accent.950}",
+            },
+          },
           fg: {
             value: {
-              _light: "{colors.accent.700}",
+              _light: "{colors.accent.900}",
               _dark: "{colors.accent.300}",
             },
           },
@@ -214,7 +232,7 @@ const glaucousConfig = defineConfig({
           solid: {
             value: {
               _light: "{colors.accent.600}",
-              _dark: "{colors.accent.600}",
+              _dark: "{colors.accent.900}",
             },
           },
           focusRing: {
@@ -226,7 +244,10 @@ const glaucousConfig = defineConfig({
         },
         bg: {
           DEFAULT: {
-            value: { _light: "{colors.gray.50}", _dark: "{colors.gray.950}" },
+            value: {
+              _light: "{colors.prim.50}",
+              _dark: "{colors.prim.950}",
+            },
           },
           subtle: {
             value: { _light: "{colors.gray.50}", _dark: "{colors.gray.950}" },

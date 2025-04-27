@@ -99,6 +99,12 @@ const mortuumConfig = defineConfig({
               _dark: "gray.50",
             },
           },
+          bg: {
+            value: {
+              _light: "{colors.prim.50}",
+              _dark: "{colors.prim.950}",
+            },
+          },
           fg: {
             value: {
               _light: "{colors.prim.700}",
@@ -143,6 +149,12 @@ const mortuumConfig = defineConfig({
               _dark: "gray.50",
             },
           },
+          bg: {
+            value: {
+              _light: "{colors.sec.50}",
+              _dark: "{colors.sec.950}",
+            },
+          },
           fg: {
             value: {
               _light: "{colors.sec.700}",
@@ -185,6 +197,12 @@ const mortuumConfig = defineConfig({
             value: {
               _light: "gray.50",
               _dark: "gray.50",
+            },
+          },
+          bg: {
+            value: {
+              _light: "{colors.accent.50}",
+              _dark: "{colors.accent.950}",
             },
           },
           fg: {
