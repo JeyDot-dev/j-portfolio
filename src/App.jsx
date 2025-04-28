@@ -1,16 +1,16 @@
-import { React } from "react";
 import "./App.css";
-import { Button, VStack } from "@chakra-ui/react";
+import { React } from "react";
+import { VStack } from "@chakra-ui/react";
 import { Provider } from "./context/chakraProvider";
 import { mortuum } from "./themes/mortuum";
 import { glaucous } from "./themes/glaucous";
 import { useArray } from "./hooks/useArray";
 import { PlayGround } from "./components/modules/playGround";
-import Section from "./components/layout/section";
+import { Section } from "./components/layout/section";
 import { Box } from "@chakra-ui/react";
 import { ColorModeButton } from "./components/chakra/color-mode";
-import Nav from "./components/layout/nav";
-import ThemeSwitchButton from "./components/ui/themeSwitchButton";
+import { Nav } from "./components/layout/nav";
+import { ThemeSwitchButton } from "./components/ui/themeSwitchButton";
 
 const themes = [glaucous, mortuum];
 

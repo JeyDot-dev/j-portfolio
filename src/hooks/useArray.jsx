@@ -1,4 +1,5 @@
 import { useReducer } from "react";
+
 const reducer = (state, action) => {
   const returnIndex = (value) => {
     return {
@@ -9,14 +10,14 @@ const reducer = (state, action) => {
 
   switch (action.type) {
     case "next":
-      if (state.index < state.array.length - 1) {
-        return returnIndex(1);
-      } else return returnIndex(-state.index);
+      return state.index < state.array.length - 1
+        ? returnIndex(1)
+        : returnIndex(-state.index);
 
     case "previous":
-      if (state.index > 0) {
-        return returnIndex(-1);
-      } else return returnIndex(state.array.length - 1);
+      return state.index > 0
+        ? returnIndex(-1)
+        : returnIndex(state.array.length - 1);
 
     case "reset":
       return returnIndex(-state.index);

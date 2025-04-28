@@ -10,7 +10,7 @@ import { forwardRef } from "react";
  * @param {string} [props.bg] - Optional background color for the section.
  */
 
-const Section = forwardRef(({ children, ...props }, ref) => {
+export const Section = forwardRef(({ children, ...props }, ref) => {
   return (
     <Box as="section" ref={ref} w="100%" py="10" px="12" {...props}>
       <VStack>{children}</VStack>
@@ -19,5 +19,3 @@ const Section = forwardRef(({ children, ...props }, ref) => {
 });
 
 Section.displayName = "Section";
-
-export default Section;

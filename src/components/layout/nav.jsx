@@ -9,7 +9,7 @@ import { HStack } from "@chakra-ui/react";
  * @returns {JSX.Element} The navigation bar component.
  */
 
-const Nav = ({ children, ...props }) => {
+export const Nav = ({ children, ...props }) => {
   return (
     <HStack
       as="nav"
@@ -27,5 +27,3 @@ const Nav = ({ children, ...props }) => {
     </HStack>
   );
 };
-
-export default Nav;

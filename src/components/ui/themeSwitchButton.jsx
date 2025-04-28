@@ -10,7 +10,7 @@ import { Button } from "@chakra-ui/react";
  * @returns {JSX.Element} The theme switch button component.
  */
 
-export default function ThemeSwitchButton({ action, handler, ...props }) {
+export const ThemeSwitchButton = ({ action, handler, ...props }) => {
   const labels = {
     previous: "Previous Theme",
     next: "Next Theme",
@@ -22,4 +22,4 @@ export default function ThemeSwitchButton({ action, handler, ...props }) {
       {labels[action]}
     </Button>
   );
-}
+};
