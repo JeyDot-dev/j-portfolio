@@ -1,16 +1,13 @@
 import "./App.css";
 import { React } from "react";
-import { Spacer, VStack } from "@chakra-ui/react";
 import { Provider } from "./context/chakraProvider";
 import { mortuum } from "./themes/mortuum";
 import { glaucous } from "./themes/glaucous";
 import { useArray } from "./hooks/useArray";
 import { PlayGround } from "./components/modules/playGround";
 import { Section } from "./components/layout/section";
-import { Box, List } from "@chakra-ui/react";
-import { ColorModeButton } from "./components/chakra/color-mode";
-import { Nav } from "./components/layout/nav";
-import { ThemeSwitchButton } from "./components/ui/themeSwitchButton";
+import { Box, VStack } from "@chakra-ui/react";
+import { NavBar } from "./components/feature/NavBar";
 
 const themes = [glaucous, mortuum];
 
@@ -18,35 +15,11 @@ function App() {
   const [theme, chooseTheme] = useArray(themes);
   return (
     <Provider theme={theme}>
-      <Nav>
-        <Box w="17rem">Yes</Box>
-        <Box>
-          <ThemeSwitchButton
-            action="previous"
-            handler={chooseTheme}
-          ></ThemeSwitchButton>
-
-          <ColorModeButton />
-
-          <ThemeSwitchButton
-            action="next"
-            handler={chooseTheme}
-          ></ThemeSwitchButton>
-        </Box>
-        <List.Root
-          flexDirection="row"
-          gap="1rem"
-          justifyContent={{ sm: "center", base: "end" }}
-          variant="plain"
-          w="17rem"
-        >
-          <List.Item>Item 1</List.Item>
-          <List.Item>Item 2</List.Item>
-        </List.Root>
-      </Nav>
-
-      <VStack as="main">
-        <PlayGround />
+      <NavBar themeHandler={chooseTheme} />
+      <Box as="main">
+        <Section>
+          <PlayGround />
+        </Section>
 
         <Section bg="accent.bg" colorPalette="accent">
           <Box h="66vh">
@@ -59,7 +32,7 @@ function App() {
             <PlayGround />
           </Box>
         </Section>
-      </VStack>
+      </Box>
     </Provider>
   );
 }
