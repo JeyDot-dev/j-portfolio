@@ -12,8 +12,15 @@ import { forwardRef } from "react";
 
 export const Section = forwardRef(({ children, ...props }, ref) => {
   return (
-    <Box as="section" ref={ref} w="100%" py="10" px="12" {...props}>
-      <VStack>{children}</VStack>
+    <Box
+      as="section"
+      ref={ref}
+      w="100%"
+      py="10"
+      px={{ base: "10%", lg: "15%" }}
+      {...props}
+    >
+      {children}
     </Box>
   );
 });
