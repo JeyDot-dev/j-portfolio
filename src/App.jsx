@@ -6,7 +6,7 @@ import { glaucous } from "./themes/glaucous";
 import { useArray } from "./hooks/useArray";
 import { PlayGround } from "./components/modules/playGround";
 import { Section } from "./components/layout/section";
-import { Box, VStack } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import { NavBar } from "./components/feature/NavBar";
 
 const themes = [glaucous, mortuum];

@@ -31,7 +31,8 @@ export const Nav = ({ children, ...props }) => {
   );
   return isMobile ? (
     <Drawer.Root placement="bottom">
-      <Drawer.Backdrop bg={props.bg ? props.bg + "/20" : "sec.500/20"} />
+      {/* <Drawer.Backdrop bg={props.bg ? props.bg + "/20" : "sec.500/20"} /> */}
+      <Drawer.Backdrop bg="gray/10" />
       <Drawer.Trigger asChild>
         <Button
           position="fixed"
