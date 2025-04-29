@@ -22,7 +22,7 @@ import { CiMenuBurger } from "react-icons/ci";
  */
 
 const defaultSize = "6rem";
-const defaultMb = "3rem";
+const defaultMb = "0";
 
 export const Nav = ({ children, ...props }) => {
   const isMobile = useBreakpointValue(
