@@ -1,12 +1,16 @@
-import { Box, List } from "@chakra-ui/react";
+import { Box, Button, List } from "@chakra-ui/react";
 import { Nav } from "../layout/nav";
 import { ThemeSwitchButton } from "../ui/themeSwitchButton";
 import { ColorModeButton } from "../chakra/color-mode";
+import { useContentContext } from "../context/contentProvider";
 
 export const NavBar = ({ themeHandler, ...props }) => {
+  const { language, toggleLanguage, content } = useContentContext();
   return (
     <Nav {...props}>
-      <Box w="17rem">Yes</Box>
+      <Box w="17rem">
+        <Button onClick={toggleLanguage}>{language}</Button>
+      </Box>
       <Box>
         <ThemeSwitchButton
           action="previous"

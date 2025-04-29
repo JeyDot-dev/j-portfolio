@@ -13,6 +13,10 @@ import { forwardRef } from "react";
 export const Section = forwardRef(({ children, ...props }, ref) => {
   return (
     <Box
+      // display="flex"
+      // direction="column"
+      // align="center"
+      // justify="center"
       as="section"
       ref={ref}
       w="100%"
