@@ -1,4 +1,4 @@
-import { useToggle } from "../hooks/useToggle";
+import { useToggle } from "../../hooks/useToggle";
 import { createContext, useContext, useEffect } from "react";
 import { content } from "./content";
 
@@ -18,17 +18,22 @@ function updateLanguage(language) {
 }
 
 export function ContentProvider({ children }) {
-  const [language, toggleLanguage, setLanguage] = useToggle("fr", "en");
-  useEffect(() => {
-    setLanguage(getStorageLanguage());
-    console.log(language);
-  }, []);
+  const [language, toggleLanguage, setLanguage] = useToggle(
+    "fr",
+    "en",
+    getStorageLanguage(),
+  );
   useEffect(() => {
     updateLanguage(language);
   }, [language]);
   return (
     <ContentContext.Provider
-      value={{ language: language, toggle: toggleLanguage, content }}
+      value={{
+        language: language,
+        toggleLanguage: toggleLanguage,
+        content,
+        setLanguage: setLanguage,
+      }}
     >
       {children}
     </ContentContext.Provider>
