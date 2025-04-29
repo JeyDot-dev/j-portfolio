@@ -107,8 +107,8 @@ const glaucousConfig = defineConfig({
           },
           fg: {
             value: {
-              _light: "{colors.prim.700}",
-              _dark: "{colors.prim.300}",
+              _light: "{colors.prim.900}",
+              _dark: "{colors.prim.100}",
             },
           },
           subtle: {
