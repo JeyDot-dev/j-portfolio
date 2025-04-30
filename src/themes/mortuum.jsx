@@ -9,83 +9,82 @@ const mortuumConfig = defineConfig({
   theme: {
     tokens: {
       colors: {
-        prim: {
-          50: { value: "#F3E6E3" },
-          100: { value: "#E7CCC7" },
-          200: { value: "#DBB3AB" },
-          300: { value: "#CF9990" },
-          400: { value: "#C38074" },
-          500: { value: "#B76658" },
-          600: { value: "#A25345" },
-          700: { value: "#6A372E" },
-          800: { value: "#4F2822" },
-          900: { value: "#47241E" },
-          950: { value: "#47241E" },
+        "prim": {
+          "50": "#F7EFED",
+          "100": "#EAD1CD",
+          "200": "#DCB4AD",
+          "300": "#CE968C",
+          "400": "#C1796C",
+          "500": "#B35C4C",
+          "600": "#8F493D",
+          "700": "#6B372E",
+          "800": "#48251E",
+          "900": "#24120F",
+          "950": "#24120F",
         },
-        sec: {
-          50: { value: "#E6BBB4" },
-          100: { value: "#E1ADA5" },
-          200: { value: "#DCA097" },
-          300: { value: "#D79288" },
-          400: { value: "#D28579" },
-          500: { value: "#CD776A" },
-          600: { value: "#C56252" },
-          700: { value: "#A34536" },
-          800: { value: "#8C3B2F" },
-          900: { value: "#753127" },
-          950: { value: "#5D271F" },
+        "sec": {
+          "50": "#F0F4F4",
+          "100": "#D6DFE0",
+          "200": "#BCCACD",
+          "300": "#A2B6B9",
+          "400": "#88A1A5",
+          "500": "#6E8C91",
+          "600": "#587074",
+          "700": "#425457",
+          "800": "#2C383A",
+          "900": "#161C1D",
+          "950": "#161C1D",
         },
-        accent: {
-          50: { value: "#FBEDD3" },
-          100: { value: "#FAE9CA" },
-          200: { value: "#F9E6C1" },
-          300: { value: "#F8E2B8" },
-          400: { value: "#F8DEAF" },
-          500: { value: "#F7DBA6" },
-          600: { value: "#F3CB81" },
-          700: { value: "#F0BC5B" },
-          800: { value: "#ECAC35" },
-          900: { value: "#E39B15" },
-          950: { value: "#E39B15" },
+        "accent": {
+          "50": "#FDF5E8",
+          "100": "#F9E4BE",
+          "200": "#F5D393",
+          "300": "#F1C269",
+          "400": "#EEB13F",
+          "500": "#EA9F15",
+          "600": "#BB8011",
+          "700": "#8C600D",
+          "800": "#5E4008",
+          "900": "#2F2004",
+          "950": "#2F2004",
         },
-        gray: {
-          50: { value: "#F7F6F6" },
-          100: { value: "#EFECEC" },
-          200: { value: "#DFD9D9" },
-          300: { value: "#D0C6C6" },
-          400: { value: "#C0B3B3" },
-          500: { value: "#B0A0A0" },
-          600: { value: "#A18E8E" },
-          700: { value: "#806B6B" },
-          800: { value: "#493D3D" },
-          900: { value: "#372E2E" },
-          950: { value: "#070605" },
+        "gray": {
+          "50": "#F4F2F1",
+          "100": "#E0DAD7",
+          "200": "#CCC2BD",
+          "300": "#B8ABA3",
+          "400": "#A49389",
+          "500": "#917B6F",
+          "600": "#746358",
+          "700": "#574A42",
+          "800": "#3A312C",
+          "900": "#1D1916",
+          "950": "#1D1916",
         },
-        green: {
-          50: { value: "#E3F6CF" },
-          100: { value: "#DBF3C1" },
-          200: { value: "#D7F2BA" },
-          300: { value: "#C2EB96" },
-          400: { value: "#ADE472" },
-          500: { value: "#98DD4E" },
-          600: { value: "#83D72B" },
-          700: { value: "#6EB422" },
-          800: { value: "#58901B" },
-          900: { value: "#58901B" },
-          950: { value: "#426C15" },
+        "green": {
+          "50": "#F3FBEA",
+          "100": "#DCF4C3",
+          "200": "#C6EC9C",
+          "300": "#AFE576",
+          "400": "#99DE4F",
+          "500": "#83D728",
+          "600": "#68AC20",
+          "700": "#4E8118",
+          "800": "#345610",
+          "900": "#1A2B08",
+          "950": "#1A2B08",
         },
-        red: {
-          50: { value: "#FAD7DB" },
-          100: { value: "#F5B0B8" },
-          200: { value: "#F29CA6" },
-          300: { value: "#F08894" },
-          400: { value: "#ED7482" },
-          500: { value: "#EA6070" },
-          600: { value: "#E84C5E" },
-          700: { value: "#E5384D" },
-          800: { value: "#E21F36" },
-          900: { value: "#CA1A2F" },
-          950: { value: "#B11729" },
+        "red": {
+          "50": "#FCE8EB",
+          "100": "#F7C0C7",
+          "200": "#F197A2",
+          "300": "#EC6F7E",
+          "400": "#E7465A",
+          "500": "#E21D35",
+          "600": "#B4182B",
+          "700": "#871220",
+          "800": "#5A0C15",
+          "950": "#2D060B",
         },
       },
     },
@@ -107,8 +106,8 @@ const mortuumConfig = defineConfig({
           },
           fg: {
             value: {
-              _light: "{colors.prim.700}",
-              _dark: "{colors.prim.300}",
+              _light: "{colors.prim.800}",
+              _dark: "{colors.prim.100}",
             },
           },
           subtle: {
@@ -135,6 +134,12 @@ const mortuumConfig = defineConfig({
               _dark: "{colors.prim.600}",
             },
           },
+          hard: {
+            value: {
+              _light: "{colors.prim.800}",
+              _dark: "{colors.prim.300}",
+            },
+          },
           focusRing: {
             value: {
               _light: "{colors.prim.400}",
@@ -157,8 +162,8 @@ const mortuumConfig = defineConfig({
           },
           fg: {
             value: {
-              _light: "{colors.sec.700}",
-              _dark: "{colors.sec.300}",
+              _light: "{colors.sec.800}",
+              _dark: "{colors.sec.100}",
             },
           },
           subtle: {
@@ -185,6 +190,12 @@ const mortuumConfig = defineConfig({
               _dark: "{colors.sec.600}",
             },
           },
+          hard: {
+            value: {
+              _light: "{colors.sec.800}",
+              _dark: "{colors.sec.300}",
+            },
+          },
           focusRing: {
             value: {
               _light: "{colors.sec.400}",
@@ -207,8 +218,8 @@ const mortuumConfig = defineConfig({
           },
           fg: {
             value: {
-              _light: "{colors.accent.700}",
-              _dark: "{colors.accent.300}",
+              _light: "{colors.accent.800}",
+              _dark: "{colors.accent.100}",
             },
           },
           subtle: {
@@ -229,10 +240,31 @@ const mortuumConfig = defineConfig({
               _dark: "{colors.accent.700}",
             },
           },
+          solid: {
+            value: {
+              _light: "{colors.accent.600}",
+              _dark: "{colors.accent.900}",
+            },
+          },
+          hard: {
+            value: {
+              _light: "{colors.accent.800}",
+              _dark: "{colors.accent.300}",
+            },
+          },
+          focusRing: {
+            value: {
+              _light: "{colors.accent.400}",
+              _dark: "{colors.accent.400}",
+            },
+          },
         },
         bg: {
           DEFAULT: {
-            value: { _light: "{colors.gray.50}", _dark: "{colors.gray.950}" },
+            value: {
+              _light: "{colors.gray.50}",
+              _dark: "{colors.gray.950}",
+            },
           },
           subtle: {
             value: { _light: "{colors.gray.50}", _dark: "{colors.gray.950}" },

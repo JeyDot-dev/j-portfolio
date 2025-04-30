@@ -9,83 +9,83 @@ const glaucousConfig = defineConfig({
   theme: {
     tokens: {
       colors: {
-        prim: {
-          50: { value: "#EBEAEA" },
-          100: { value: "#C9CBDC" },
-          200: { value: "#BBBED3" },
-          300: { value: "#A0A4C1" },
-          400: { value: "#9297B8" },
-          500: { value: "#858AAF" },
-          600: { value: "#777DA6" },
-          700: { value: "#666C9B" },
-          800: { value: "#5A608A" },
-          900: { value: "#4F5479" },
-          950: { value: "#0B0C11" },
+        "gray": {
+          "50": "#F3F2F2",
+          "100": "#DDD9D9",
+          "200": "#C7C1C1",
+          "300": "#B2A9A9",
+          "400": "#9C9191",
+          "500": "#867979",
+          "600": "#6B6161",
+          "700": "#504949",
+          "800": "#363030",
+          "900": "#1B1818",
+          "950": "#1B1818",
         },
-        sec: {
-          50: { value: "#FBECEB" },
-          100: { value: "#F7D8D6" },
-          200: { value: "#F3C5C2" },
-          300: { value: "#F1BBB7" },
-          400: { value: "#EFB2AD" },
-          500: { value: "#EDA8A3" },
-          600: { value: "#E48078" },
-          700: { value: "#D84238" },
-          800: { value: "#C23126" },
-          900: { value: "#A22920" },
-          950: { value: "#0D0E04" },
+        "green": {
+          "50": "#EEF7F1",
+          "100": "#CEE8D9",
+          "200": "#AFDAC0",
+          "300": "#90CBA8",
+          "400": "#71BC8F",
+          "500": "#51AE77",
+          "600": "#418B5F",
+          "700": "#316847",
+          "800": "#214530",
+          "900": "#102318",
+          "950": "#102318",
         },
-        accent: {
-          50: { value: "#F1F2F6" },
-          100: { value: "#EFF0D1" },
-          200: { value: "#ECEEC9" },
-          300: { value: "#EAEBC1" },
-          400: { value: "#E7E9BA" },
-          500: { value: "#E4E6B2" },
-          600: { value: "#DADC93" },
-          700: { value: "#CFD274" },
-          800: { value: "#C4C856" },
-          900: { value: "#B5B93C" },
-          950: { value: "#171823" },
+        "red": {
+          "50": "#FFE7E6",
+          "100": "#FFBDB8",
+          "200": "#FE928A",
+          "300": "#FE685D",
+          "400": "#FE3E2F",
+          "500": "#FE1301",
+          "600": "#CB0F01",
+          "700": "#980B01",
+          "800": "#650801",
+          "900": "#330400",
+          "950": "#330400",
         },
-        gray: {
-          50: { value: "#EBEAEA" },
-          100: { value: "#D7D5D5" },
-          200: { value: "#C2C0C0" },
-          300: { value: "#AEABAB" },
-          400: { value: "#9A9696" },
-          500: { value: "#868181" },
-          600: { value: "#716C6C" },
-          700: { value: "#464444" },
-          800: { value: "#2C2B2B" },
-          900: { value: "#1E1C1C" },
-          950: { value: "#0A0909" },
+        "prim": {
+          "50": "#EFF0F5",
+          "100": "#D3D5E4",
+          "200": "#B6B9D2",
+          "300": "#9A9EC1",
+          "400": "#7D83B0",
+          "500": "#61689E",
+          "600": "#4D537F",
+          "700": "#3A3E5F",
+          "800": "#27293F",
+          "900": "#131520",
+          "950": "#131520",
         },
-        green: {
-          50: { value: "#B3D9C2" },
-          100: { value: "#9DCEB1" },
-          200: { value: "#92C8A8" },
-          300: { value: "#7BBD96" },
-          400: { value: "#64B183" },
-          500: { value: "#51A171" },
-          600: { value: "#468A61" },
-          700: { value: "#3A7351" },
-          800: { value: "#2E5C41" },
-          900: { value: "#234531" },
-          950: { value: "#172E20" },
+        "sec": {
+          "50": "#EBF9ED",
+          "100": "#C7F0CD",
+          "200": "#A3E6AD",
+          "300": "#7FDC8C",
+          "400": "#5BD26C",
+          "500": "#37C84C",
+          "600": "#2CA03D",
+          "700": "#21782D",
+          "800": "#16501E",
+          "900": "#0B280F",
+          "950": "#0B280F",
         },
-        red: {
-          50: { value: "#FFBFBA" },
-          100: { value: "#FE9E97" },
-          200: { value: "#FE8E86" },
-          300: { value: "#FE7E75" },
-          400: { value: "#FE6E64" },
-          500: { value: "#FE5E52" },
-          600: { value: "#FE3F31" },
-          700: { value: "#C90E01" },
-          800: { value: "#A70C01" },
-          900: { value: "#860A01" },
-          950: { value: "#640701" },
+        "accent": {
+          "50": "#FAEDEB",
+          "100": "#F1CEC6",
+          "200": "#E7AEA1",
+          "300": "#DE8E7D",
+          "400": "#D56E58",
+          "500": "#CB4F34",
+          "600": "#A33F29",
+          "700": "#7A2F1F",
+          "800": "#511F15",
+          "900": "#29100A",
+          "950": "#29100A",
         },
       },
     },
@@ -107,7 +107,7 @@ const glaucousConfig = defineConfig({
           },
           fg: {
             value: {
-              _light: "{colors.prim.900}",
+              _light: "{colors.prim.800}",
               _dark: "{colors.prim.100}",
             },
           },
@@ -135,6 +135,12 @@ const glaucousConfig = defineConfig({
               _dark: "{colors.prim.600}",
             },
           },
+          hard: {
+            value: {
+              _light: "{colors.prim.800}",
+              _dark: "{colors.prim.300}",
+            },
+          },
           focusRing: {
             value: {
               _light: "{colors.prim.400}",
@@ -157,8 +163,8 @@ const glaucousConfig = defineConfig({
           },
           fg: {
             value: {
-              _light: "{colors.sec.700}",
-              _dark: "{colors.sec.300}",
+              _light: "{colors.sec.800}",
+              _dark: "{colors.sec.100}",
             },
           },
           subtle: {
@@ -181,8 +187,14 @@ const glaucousConfig = defineConfig({
           },
           solid: {
             value: {
-              _light: "{colors.sec.500}",
-              _dark: "{colors.sec.500}",
+              _light: "{colors.sec.600}",
+              _dark: "{colors.sec.600}",
+            },
+          },
+          hard: {
+            value: {
+              _light: "{colors.sec.800}",
+              _dark: "{colors.sec.300}",
             },
           },
           focusRing: {
@@ -207,8 +219,8 @@ const glaucousConfig = defineConfig({
           },
           fg: {
             value: {
-              _light: "{colors.accent.900}",
-              _dark: "{colors.accent.300}",
+              _light: "{colors.accent.800}",
+              _dark: "{colors.accent.100}",
             },
           },
           subtle: {
@@ -235,6 +247,12 @@ const glaucousConfig = defineConfig({
               _dark: "{colors.accent.900}",
             },
           },
+          hard: {
+            value: {
+              _light: "{colors.accent.800}",
+              _dark: "{colors.accent.300}",
+            },
+          },
           focusRing: {
             value: {
               _light: "{colors.accent.400}",
@@ -245,8 +263,8 @@ const glaucousConfig = defineConfig({
         bg: {
           DEFAULT: {
             value: {
-              _light: "{colors.prim.50}",
-              _dark: "{colors.prim.950}",
+              _light: "{colors.gray.50}",
+              _dark: "{colors.gray.950}",
             },
           },
           subtle: {
