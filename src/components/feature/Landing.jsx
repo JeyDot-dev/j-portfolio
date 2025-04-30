@@ -2,15 +2,16 @@ import React from "react";
 import { Section } from "../layout/section";
 import { VStack, Icon, Heading, Box, Text } from "@chakra-ui/react";
 import { useContentContext } from "../context/contentProvider";
-import PortraitLogo from "../../assets/42portraitLogo.svg?react";
-export function Landing() {
+// import PortraitLogo from "../../assets/42portraitLogo.svg?react";
+export function Landing({ children, ...props }) {
   const { content, language } = useContentContext();
   return (
-    <Section id="landing" textAlign="center" pt="0">
+    <Section id="landing" textAlign="center" pt="6rem" {...props}>
       <VStack gap={{ base: "3vh", sm: "5vh" }} align="center">
-        <Icon color="prim.fg" w="80vw" h="80vw" maxH="350px" maxW="350px">
+        {/* <Icon color="prim.fg" w="80vw" h="80vw" maxH="350px" maxW="350px">
           <PortraitLogo />
-        </Icon>
+        </Icon> */}
+        {children}
         <Heading
           lineHeight="1"
           size={{ base: "2xl", lg: "3xl" }}

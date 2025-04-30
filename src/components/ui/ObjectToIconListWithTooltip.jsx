@@ -43,7 +43,6 @@ export function ObjectToIconListWithTooltip(
       </List.Item>
       {items ? (
         Object.entries(items).map((item) => {
-          console.log = "WAPITPIADPIAWDPI";
           return (
             <List.Item key={item[0] + "-listItem"} {...props}>
               <Tooltip
