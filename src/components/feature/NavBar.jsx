@@ -1,10 +1,10 @@
-import { Box, Button, List } from "@chakra-ui/react";
+import { Box, Button, List, Link } from "@chakra-ui/react";
 import { Nav } from "../layout/nav";
 import { ThemeSwitchButton } from "../ui/themeSwitchButton";
 import { ColorModeButton } from "../chakra/color-mode";
 import { useContentContext } from "../context/contentProvider";
 
-export const NavBar = ({ themeHandler, ...props }) => {
+export const NavBar = ({ themeHandler, anchorLinks = {}, ...props }) => {
   const { language, toggleLanguage, content } = useContentContext();
   return (
     <Nav {...props}>
@@ -31,8 +31,13 @@ export const NavBar = ({ themeHandler, ...props }) => {
         variant="plain"
         w="17rem"
       >
-        <List.Item>Item 1</List.Item>
-        <List.Item>Item 2</List.Item>
+        {Object.entries(anchorLinks).map((link) => {
+          return (
+            <List.Item key={link[1] + "-menu-anchor-link"}>
+              <Link href={"#" + link[1]}>{link[0]}</Link>
+            </List.Item>
+          );
+        })}
       </List.Root>
     </Nav>
   );
