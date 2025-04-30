@@ -20,7 +20,9 @@ import {
 } from "@chakra-ui/react";
 import { NavBar } from "./components/feature/NavBar";
 import { useContentContext } from "./components/context/contentProvider";
-import PortraitLogo from "./assets/42portraitLogo.svg?react";
+import { Landing } from "./components/feature/Landing";
+import { Tooltip } from "./components/chakra/tooltip";
+import { ObjectToIconListWithTooltip } from "./components/ui/ObjectToIconListWithTooltip";
 
 const themes = [glaucous, mortuum];
 
@@ -31,61 +33,31 @@ function App() {
     <Provider theme={theme}>
       <NavBar themeHandler={chooseTheme} />
       <Box as="main">
-        <Section
-          id="landing"
-          minH={{ base: "100vh", lg: "95vh" }}
-          // maxH={{ lg: "90vh" }}
-          textAlign="center"
-          pt="0"
-        >
-          <VStack gap={{ base: "3vh", sm: "5vh" }} align="center">
-            <Icon color="prim.fg" w="80vw" h="80vw" maxH="350px" maxW="350px">
-              <PortraitLogo />
-            </Icon>
-            <Heading
-              lineHeight="1"
-              size={{ base: "2xl", lg: "3xl" }}
-              color="prim.fg"
-              as="h1"
-              gap="4"
-            >
-              Hi, I&apos;m {content[language].landing.heading.name}
-              <br />
-              <small>{content[language].landing.heading.title}</small>
-            </Heading>
-            <Heading color="prim.fg" as="h2" size={{ base: "xl", lg: "2xl" }}>
-              {content[language].landing.subHeading}
-            </Heading>
-            <Box display="flex" h="12vh">
-              <Text
-                id="Scroll-hint-placeholed"
-                my="auto"
-                textStyle={{ base: "5xl", xl: "7xl" }}
-                color="accent.fg"
-              >
-                V
-              </Text>
-            </Box>
-            <Text color="prim.fg" textStyle="lg">
-              {content[language].landing.text}
-            </Text>
-          </VStack>
-        </Section>
+        {/* ==================== LANDING SECTION ==================== */}
+        <Landing />
 
+        {/* ==================== ABOUT ME SECTION ==================== */}
         <Section
           bg="sec.bg"
           colorPalette="sec"
+          color="sec.fg"
           id="about-me"
           pt="10vh"
-          h={{ base: "100vh", lg: "95vh" }}
           px="3vw"
+          display="flex"
+          direction="column"
+          align="center"
+          justify="center"
         >
           <Wrap
-            px={{ base: "0", xl: "12%", "2xl": "18%" }}
-            direction={{ base: "column", md: "row" }}
-            justify={{ base: "center", lg: "space-between" }}
+            px={{ "base": "2vw", "xl": "8vw", "2xl": "14vw" }}
+            direction={{ base: "column", xl: "row" }}
+            justify={{ base: "center", xl: "space-between" }}
             align="center"
             textAlign="start"
+            gap="5rem"
+            my="auto"
+            mx="auto"
           >
             <VStack w={{ base: "100%", sm: "28rem" }}>
               <Text>{content[language].aboutMe.intro}</Text>
@@ -98,33 +70,35 @@ function App() {
               <Text>{content[language].aboutMe.personal}</Text>
             </VStack>
             <Box w={{ base: "100%", sm: "28rem" }}>
-              <List.Root>
-                <List.Item>
-                  Cillum velit ex nostrud cupidatat incididunt et laboris
-                  pariatur ex esse. Exercitation deserunt reprehenderit duis est
-                  do enim. Sint nulla enim amet culpa enim aliquip ipsum
-                  ullamco. Consequat proident sint Lorem velit laborum consequat
-                  amet qui dolor tempor id ullamco mollit nostrud. Ad irure
-                  occaecat incididunt qui dolore commodo nostrud.
-                </List.Item>
-                <List.Item>WAPITI</List.Item>
-                <List.Item>WAPITI</List.Item>
-                <List.Item>WAPITI</List.Item>
+              <List.Root variant="plain" color="accent.fg" gap="12">
+                <ObjectToIconListWithTooltip items={content.skills.languages}>
+                  Languages:
+                </ObjectToIconListWithTooltip>
+                <ObjectToIconListWithTooltip items={content.skills.libs}>
+                  Libs:
+                </ObjectToIconListWithTooltip>
+                <ObjectToIconListWithTooltip items={content.skills.tools}>
+                  Tools:
+                </ObjectToIconListWithTooltip>
               </List.Root>
             </Box>
           </Wrap>
         </Section>
+
+        {/* ==================== EXTRA SECTION 1 ==================== */}
         <Section
           bg="green"
           colorPalette="sec"
-          id="about-me"
+          id="extra-section-1"
           pt="10vh"
           h={{ base: "100vh", lg: "95vh" }}
         ></Section>
+
+        {/* ==================== EXTRA SECTION 2 ==================== */}
         <Section
           bg="green"
           colorPalette="sec"
-          id="about-me"
+          id="extra-section-2"
           pt="10vh"
           h={{ base: "100vh", lg: "95vh" }}
         ></Section>

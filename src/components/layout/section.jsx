@@ -22,6 +22,7 @@ export const Section = forwardRef(({ children, ...props }, ref) => {
       w="100%"
       py="10"
       px={{ base: "10%", lg: "15%" }}
+      minH={{ base: "100vh", lg: "95vh" }}
       {...props}
     >
       {children}
