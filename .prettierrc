@@ -1,4 +1,6 @@
 {
+  "plugins": [],
   "semi": true,
-  "singleQuote": false
+  "singleQuote": false,
+  "quoteProps": "preserve"
 }
