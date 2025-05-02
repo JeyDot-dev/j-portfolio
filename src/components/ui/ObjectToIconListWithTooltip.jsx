@@ -1,4 +1,4 @@
-import { List, Icon, Heading } from "@chakra-ui/react";
+import { List, Icon, Heading, Box } from "@chakra-ui/react";
 import { Tooltip } from "../chakra/tooltip";
 /**
  * A React component that renders a list of icons with tooltips based on an object of items.
@@ -27,51 +27,51 @@ import { Tooltip } from "../chakra/tooltip";
  * </ObjectToIconListWithTooltip>
  */
 export function ObjectToIconListWithTooltip(
-  { items, tooltipProps = "", iconProps = "", children },
+  { items, tooltipProps = {}, iconProps = {}, children = null },
   ...props
 ) {
   return (
-    <List.Root
-      flexDirection="row"
-      variant="plain"
-      gap="3"
-      flexWrap="wrap"
-      w="100%"
-    >
-      <List.Item>
-        <Heading my="auto">{children}</Heading>
-      </List.Item>
-      {items ? (
-        Object.entries(items).map((item) => {
-          return (
-            <List.Item key={item[0] + "-listItem"} {...props}>
-              <Tooltip
-                key={item[0] + "-tooltip"}
-                content={item[0]}
-                positioning={{ placement: "top" }}
-                showArrow
-                openDelay={200}
-                closeDelay={100}
-                contentProps={{
-                  bg: "sec.fg",
-                  ...tooltipProps,
-                }}
-              >
-                <Icon
-                  w="3.5rem"
-                  h="3.5rem"
-                  // color={{ _hover: "prim.emphasized" }}
-                  {...iconProps}
+    <Box {...props}>
+      {children && <Heading my="auto">{children}</Heading>}
+      <List.Root
+        flexDirection="row"
+        variant="plain"
+        gap="3"
+        flexWrap="wrap"
+        w="100%"
+      >
+        {items && Object.keys(items).length > 0 ? (
+          Object.entries(items).map(([key, value]) => {
+            return (
+              <List.Item key={key + "-listItem"}>
+                <Tooltip
+                  key={key + "-tooltip"}
+                  content={key}
+                  positioning={{ placement: "top" }}
+                  showArrow
+                  openDelay={200}
+                  closeDelay={100}
+                  contentProps={{
+                    bg: "sec.fg",
+                    ...tooltipProps,
+                  }}
                 >
-                  {item[1]}
-                </Icon>
-              </Tooltip>
-            </List.Item>
-          );
-        })
-      ) : (
-        <List.Item>Empty item</List.Item>
-      )}
-    </List.Root>
+                  <Icon
+                    w="3.5rem"
+                    h="3.5rem"
+                    // color={{ _hover: "prim.emphasized" }}
+                    {...iconProps}
+                  >
+                    {value}
+                  </Icon>
+                </Tooltip>
+              </List.Item>
+            );
+          })
+        ) : (
+          <List.Item>Empty item</List.Item>
+        )}
+      </List.Root>
+    </Box>
   );
 }
