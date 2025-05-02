@@ -33,8 +33,8 @@ import { ProjectsSection } from "./components/feature/ProjectsSection";
 
 const themes = [glaucous, mortuum];
 const anchorLinks = {
-  "Home": "landing",
-  "About me": "about-me",
+  "Home": "landing-section",
+  "About me": "about-me-section",
   "My projects": "projects-section",
 };
 

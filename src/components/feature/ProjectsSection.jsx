@@ -8,19 +8,26 @@ export function ProjectsSection(props) {
   return (
     <Section
       bg="prim.subtle"
-      colorPalette="sec"
+      colorPalette="prim"
       id="projects-section"
-      pt="10vh"
+      py="3vh"
       px="3vw"
+      minH="100vh"
+      display="flex"
+      flexDirection="column"
+      align="center"
+      justify="center"
       {...props}
     >
       <Flex
+        px={{ "base": "2vw", "xl": "8vw", "2xl": "14vw" }}
         wrap="wrap"
         direction={{ base: "column", xl: "row" }}
-        gap="6rem"
+        gap="6.5rem"
         justify="space-around"
+        align="center"
         alignItems="center"
-        h="100%"
+        my="auto"
       >
         {content.projects.cards.map((card) => {
           return (

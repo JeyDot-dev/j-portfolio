@@ -29,7 +29,7 @@ export function AboutMeSection(props) {
       pt="0"
       px="3vw"
       display="flex"
-      direction="column"
+      flexDirection="column"
       align="center"
       justify="center"
       {...props}
