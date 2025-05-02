@@ -17,16 +17,26 @@ import {
   Spacer,
   Wrap,
   Icon,
+  Stack,
+  Card,
+  Flex,
 } from "@chakra-ui/react";
 import { NavBar } from "./components/feature/NavBar";
 import { useContentContext } from "./components/context/contentProvider";
-import { Landing } from "./components/feature/Landing";
+import { LandingSection } from "./components/feature/LandingSection";
 import { ObjectToIconListWithTooltip } from "./components/ui/ObjectToIconListWithTooltip";
 import PortraitLogo from "./assets/42portraitLogo.svg?react";
 import { AboutMeSection } from "./components/feature/AboutMeSection";
+import { filterSkills } from "./components/context/content";
+import { ProjectCard } from "./components/ui/ProjectCard";
+import { ProjectsSection } from "./components/feature/ProjectsSection";
 
 const themes = [glaucous, mortuum];
-const anchorLinks = { "Home": "landing", "About me": "about-me" };
+const anchorLinks = {
+  "Home": "landing",
+  "About me": "about-me",
+  "My projects": "projects-section",
+};
 
 function App() {
   const [theme, chooseTheme] = useArray(themes);
@@ -34,27 +44,26 @@ function App() {
   return (
     <Provider theme={theme}>
       <Box as="main" pt="">
-        <Landing bg="gray.bg">
+        <LandingSection bg="bg" id="landing-section">
           <NavBar
             themeHandler={chooseTheme}
             top="0"
             bg="prim.subtle/50"
             anchorLinks={anchorLinks}
           />
-        </Landing>
+        </LandingSection>
 
-        <AboutMeSection bg="prim.bg" colorPalette="sec" color="sec.fg" />
-
-        {/* ==================== EXTRA SECTION 1 ==================== */}
-        <Section
-          bg="sec.bg"
+        <AboutMeSection
+          bg="prim.bg"
           colorPalette="sec"
-          id="extra-section-1"
-          pt="10vh"
-          h={{ base: "100vh", lg: "95vh" }}
-        >
-          <PlayGround></PlayGround>
-        </Section>
+          color="sec.fg"
+          id="about-me-section"
+        />
+        <ProjectsSection
+          bg="prim.subtle"
+          colorPalette="sec"
+          id="projects-section"
+        ></ProjectsSection>
 
         {/* ==================== EXTRA SECTION 2 ==================== */}
         <Section

@@ -11,6 +11,13 @@ import PortraitLogo from "../../assets/42portraitLogo.svg?react";
 import { useContentContext } from "../context/contentProvider";
 import { ObjectToIconListWithTooltip } from "../ui/ObjectToIconListWithTooltip";
 import { Section } from "../layout/section";
+import { content, filterSkills } from "../context/content";
+
+const skills = [
+  ["languages", filterSkills(content.aboutMe.languages)],
+  ["libs", filterSkills(content.aboutMe.libs)],
+  ["tools", filterSkills(content.aboutMe.tools)],
+];
 
 export function AboutMeSection(props) {
   const { language, content } = useContentContext();
@@ -19,7 +26,7 @@ export function AboutMeSection(props) {
       bg="bg"
       colorPalette="default"
       id="about-me"
-      pt="10vh"
+      pt="0"
       px="3vw"
       display="flex"
       direction="column"
@@ -41,26 +48,27 @@ export function AboutMeSection(props) {
           <Icon w="80vw" h="80vw" maxH="350px" maxW="350px">
             <PortraitLogo />
           </Icon>
-          <Text>{content[language].aboutMe.intro}</Text>
+          <Text>{content.aboutMe.intro[language]}</Text>
           <Separator
             size="xs"
             // my="1rem"
             borderColor="prim.subtle"
             w="100%"
           />
-          <Text>{content[language].aboutMe.personal}</Text>
+          <Text>{content.aboutMe.personal[language]}</Text>
         </VStack>
         <Box w={{ base: "100%", sm: "28rem" }}>
           <List.Root variant="plain" color="accent.fg" gap="12">
-            <ObjectToIconListWithTooltip items={content.skills.languages}>
-              Languages:
-            </ObjectToIconListWithTooltip>
-            <ObjectToIconListWithTooltip items={content.skills.libs}>
-              Libs:
-            </ObjectToIconListWithTooltip>
-            <ObjectToIconListWithTooltip items={content.skills.tools}>
-              Tools:
-            </ObjectToIconListWithTooltip>
+            {skills.map(([title, items]) => {
+              return (
+                <ObjectToIconListWithTooltip
+                  key={`about-me-skills-${title}`}
+                  items={items}
+                >
+                  {title}
+                </ObjectToIconListWithTooltip>
+              );
+            })}
           </List.Root>
         </Box>
       </Wrap>

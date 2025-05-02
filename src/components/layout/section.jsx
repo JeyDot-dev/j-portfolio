@@ -20,7 +20,7 @@ export const Section = forwardRef(({ children, ...props }, ref) => {
       as="section"
       ref={ref}
       w="100%"
-      py="10"
+      py="10rem"
       px={{ base: "10%", lg: "15%" }}
       // minH={{ base: "100vh", lg: "95vh" }}
       minH="100vh"

@@ -3,7 +3,7 @@ import { Section } from "../layout/section";
 import { VStack, Icon, Heading, Box, Text } from "@chakra-ui/react";
 import { useContentContext } from "../context/contentProvider";
 // import PortraitLogo from "../../assets/42portraitLogo.svg?react";
-export function Landing({ children, ...props }) {
+export function LandingSection({ children, ...props }) {
   const { content, language } = useContentContext();
   return (
     <Section id="landing" textAlign="center" pt="6rem" {...props}>
@@ -19,12 +19,12 @@ export function Landing({ children, ...props }) {
           as="h1"
           gap="4"
         >
-          Hi, I&apos;m {content[language].landing.heading.name}
+          Hi, I&apos;m {content.landing.heading[language].name}
           <br />
-          <small>{content[language].landing.heading.title}</small>
+          <small>{content.landing.heading[language].title}</small>
         </Heading>
         <Heading color="prim.fg" as="h2" size={{ base: "xl", lg: "2xl" }}>
-          {content[language].landing.subHeading}
+          {content.landing.subHeading[language]}
         </Heading>
         <Box display="flex" h="12vh">
           <Text
@@ -37,7 +37,7 @@ export function Landing({ children, ...props }) {
           </Text>
         </Box>
         <Text color="prim.fg" textStyle="lg">
-          {content[language].landing.text}
+          {content.landing.text[language]}
         </Text>
       </VStack>
     </Section>
