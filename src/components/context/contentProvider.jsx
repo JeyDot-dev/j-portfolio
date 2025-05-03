@@ -25,6 +25,7 @@ export function ContentProvider({ children }) {
   );
   useEffect(() => {
     updateLanguage(language);
+    document.documentElement.lang = language;
   }, [language]);
   return (
     <ContentContext.Provider

@@ -15,9 +15,12 @@ import {
 } from "react-icons/si";
 import transcendenceAnimated from "../../assets/transcendenceAnimated.webp";
 import transcendenceStill from "../../assets/transcendenceStill.webp";
+import fdfStill from "../../assets/fdfStill.webp";
+import fdfAnimated from "../../assets/fdfAnimated.webp";
 import { BsBootstrapFill } from "react-icons/bs";
 import { FaGitAlt, FaDocker } from "react-icons/fa6";
 import CppLogo from "../../assets/cppModified.svg?react";
+import CLogo from "../../assets/c.svg?react";
 
 export const content = {
   skills: {
@@ -27,6 +30,7 @@ export const content = {
       "HTML, CSS": <RiHtml5Fill />,
       "Kotlin": <SiKotlin />,
       "Bash": <SiGnubash />,
+      "C": <CLogo />,
     },
     libs: {
       "React": <FaReact />,
@@ -147,56 +151,53 @@ export const content = {
         githubLink: "https://www.chakra-ui.com/docs/components/aspect-ratio",
       },
       {
-        imageLink: transcendenceStill,
-        animatedLink: transcendenceAnimated,
+        imageLink: fdfStill,
+        animatedLink: fdfAnimated,
         title: {
-          en: "42 Transcendence",
-          fr: "42 Transcendance",
+          en: "42 FDF",
+          fr: "42 FDF",
         },
         description: {
-          en: "A multiplayer 3D Pong game built during 42Lausanne’s final exam project as a team of 5.",
+          en: "FDF is a graphical project that involves creating a wireframe rendering of a 3D landscape using only C and a low-level graphics library.",
           fr: "A multiplayer 3D Pong game built during 42Lausanne’s final exam project as a team of 5.",
         },
         anecdote: {
-          en: "It is a web project but I focused on infrastructure and devOps. I orchestrated 8+ Docker containers with a dual-mode environment, and implemented a secure ELK logging architecture with SSL encryption across nodes. I also designed the UI with BootStrap :)", //An anecdote or something I was particularly happy about
+          en: [
+            "This project, although introduced early in the curriculum, was a real challenge. I basically brute-forced the Bresenham algorithm and some of the trigonometry. It worked in the end!",
+            " It’s entirely written in C, using a minimal graphics library called ",
+            <Link
+              key="link-to-mlx"
+              href="https://harm-smits.github.io/42docs/libs/minilibx/introduction.html"
+              color="accent.fg"
+            >
+              miniLibX
+            </Link>,
+            ".",
+          ],
           fr: "It is a web project but I focused on infrastructure and devOps. I orchestrated 8+ Docker containers with a dual-mode environment, and implemented a secure ELK logging architecture with SSL encryption across nodes. I also designed the UI with BootStrap :)", //An anecdote or something I was particularly happy about
         },
-        techStack: [
-          "Javascript",
-          "Bootstrap",
-          "Django",
-          "Nginx",
-          "Docker",
-          "PostgreSQL",
-        ],
-        projectLink: "https://www.chakra-ui.com/docs/components/aspect-ratio",
-        githubLink: "https://www.chakra-ui.com/docs/components/aspect-ratio",
+        techStack: ["C"],
+        projectLink: "",
+        githubLink: "https://github.com/JeyDot-dev/FdF",
       },
       {
         imageLink: transcendenceStill,
         animatedLink: transcendenceAnimated,
         title: {
-          en: "42 Transcendence",
-          fr: "42 Transcendance",
+          en: "The portfolio",
+          fr: "Le portfolio",
         },
         description: {
-          en: "A multiplayer 3D Pong game built during 42Lausanne’s final exam project as a team of 5.",
+          en: "A responsive, theme-aware portfolio designed to reflect my personality, creativity, and coding style.",
           fr: "A multiplayer 3D Pong game built during 42Lausanne’s final exam project as a team of 5.",
         },
         anecdote: {
-          en: "It is a web project but I focused on infrastructure and devOps. I orchestrated 8+ Docker containers with a dual-mode environment, and implemented a secure ELK logging architecture with SSL encryption across nodes. I also designed the UI with BootStrap :)", //An anecdote or something I was particularly happy about
+          en: "I set out to create a clean, elegant space to present my work and ended up learning more than I expected. This portfolio grew into a 100+ hour deep dive into UI, UX, and reusable component design. It includes features like multilingual content support, custom theming, and a context-driven architecture.",
           fr: "It is a web project but I focused on infrastructure and devOps. I orchestrated 8+ Docker containers with a dual-mode environment, and implemented a secure ELK logging architecture with SSL encryption across nodes. I also designed the UI with BootStrap :)", //An anecdote or something I was particularly happy about
         },
-        techStack: [
-          "Javascript",
-          "Bootstrap",
-          "Django",
-          "Nginx",
-          "Docker",
-          "PostgreSQL",
-        ],
+        techStack: ["Javascript", "React", "Chakra UI"],
         projectLink: "",
-        githubLink: "https://www.chakra-ui.com/docs/components/aspect-ratio",
+        githubLink: "https://github.com/JeyDot-dev/j-portfolio",
       },
     ],
   },
