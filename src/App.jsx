@@ -30,12 +30,15 @@ import { AboutMeSection } from "./components/feature/AboutMeSection";
 import { filterSkills } from "./components/context/content";
 import { ProjectCard } from "./components/ui/ProjectCard";
 import { ProjectsSection } from "./components/feature/ProjectsSection";
+import { ContactMeSection } from "./components/feature/ContactMeSection";
+import { Toaster } from "./components/chakra/toaster";
 
 const themes = [glaucous, mortuum];
 const anchorLinks = {
   "Home": "landing-section",
-  "About me": "about-me-section",
+  "About me": "aboutme-section",
   "My projects": "projects-section",
+  "Contact me": "contactme-section",
 };
 
 function App() {
@@ -57,7 +60,7 @@ function App() {
           bg="prim.bg"
           colorPalette="sec"
           color="sec.fg"
-          id="about-me-section"
+          id="aboutme-section"
         />
         <ProjectsSection
           bg="prim.subtle"
@@ -65,14 +68,11 @@ function App() {
           id="projects-section"
         ></ProjectsSection>
 
-        {/* ==================== EXTRA SECTION 2 ==================== */}
-        <Section
-          bg="green"
-          colorPalette="sec"
-          id="extra-section-2"
-          pt="10vh"
-          h={{ base: "100vh", lg: "95vh" }}
-        ></Section>
+        <ContactMeSection
+          colorPalette="accent"
+          id="contactme-section"
+        ></ContactMeSection>
+        <Toaster />
       </Box>
     </Provider>
   );
