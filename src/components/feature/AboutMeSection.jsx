@@ -25,7 +25,7 @@ export function AboutMeSection(props) {
     <Section
       bg="bg"
       colorPalette="default"
-      id="about-me"
+      id="aboutme"
       pt="0"
       px="3vw"
       display="flex"
@@ -62,7 +62,7 @@ export function AboutMeSection(props) {
             {skills.map(([title, items]) => {
               return (
                 <ObjectToIconListWithTooltip
-                  key={`about-me-skills-${title}`}
+                  key={`aboutme-skills-${title}`}
                   items={items}
                 >
                   {title}
