@@ -46,7 +46,7 @@ export function ProjectCard({
             bgImage: `url(${animatedLink})`,
             zIndex: "popover",
           }}
-          rounded="md"
+          roundedTop="md"
         ></Box>
         <Box
           bg="accent.solid/24"

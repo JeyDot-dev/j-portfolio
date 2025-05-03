@@ -32,7 +32,7 @@ export function ProjectsSection(props) {
         {content.projects.cards.map((card) => {
           return (
             <ProjectCard
-              key={card.title + "-projectCard-key"}
+              key={card.title.en + "-projectCard-key"}
               imageLink={card.imageLink}
               animatedLink={card.animatedLink}
               title={card.title[language]}
