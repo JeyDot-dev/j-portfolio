@@ -13,7 +13,7 @@ import {
 import { toaster } from "../chakra/toaster";
 import * as Yup from "yup";
 import { useContentContext } from "../context/contentProvider";
-import { useBreakpointValue } from "@chakra-ui/react";
+// import { useBreakpointValue } from "@chakra-ui/react";
 
 const schema = Yup.object({
   name: Yup.string().required("Name is required."),
@@ -36,26 +36,26 @@ const schema = Yup.object({
 export function ContactMeSection({ ...props }) {
   const { language, content } = useContentContext();
   const formRef = useRef();
-  const isMobile = useBreakpointValue(
-    { base: true, lg: false },
-    { fallback: false },
-  );
+  // const isMobile = useBreakpointValue(
+  //   { base: true, lg: false },
+  //   { fallback: false },
+  // );
 
-  useEffect(() => {
-    const handleResize = () => {
-      if (isMobile) {
-        window.scrollTo({
-          top: document.body.scrollHeight,
-          behavior: "smooth",
-        });
-      }
-    };
+  // useEffect(() => {
+  //   const handleResize = () => {
+  //     if (isMobile) {
+  //       window.scrollTo({
+  //         top: document.body.scrollHeight,
+  //         behavior: "smooth",
+  //       });
+  //     }
+  //   };
 
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, [isMobile]);
+  //   window.addEventListener("resize", handleResize);
+  //   return () => {
+  //     window.removeEventListener("resize", handleResize);
+  //   };
+  // }, [isMobile]);
 
   useEffect(() => {
     emailjs.init({
