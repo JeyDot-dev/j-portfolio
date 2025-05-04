@@ -23,7 +23,7 @@ export function AboutMeSection({ ...props }) {
   const { language, content } = useContentContext();
   return (
     <Section
-      bg="bg"
+      // bg="bg"
       colorPalette="default"
       id="aboutme"
       px="3vw"
@@ -44,7 +44,7 @@ export function AboutMeSection({ ...props }) {
         my="auto"
         mx="auto"
       >
-        <VStack w={{ base: "100%", sm: "28rem" }} gap="9" pb="10vh">
+        <VStack w={{ base: "100%", sm: "28rem" }} gap="9" pb="0">
           <Icon w="80vw" h="80vw" maxH="350px" maxW="350px">
             <PortraitLogo />
           </Icon>

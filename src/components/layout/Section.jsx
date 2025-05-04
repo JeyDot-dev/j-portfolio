@@ -24,14 +24,14 @@ export const Section = forwardRef(
         px={{ base: "10%", lg: "15%" }}
         opacity={isVisible ? 1 : 0}
         animation={
-          isVisible ? "fade-in 350ms ease-in" : "fade-out 300ms ease-out"
+          isVisible ? "fade-in 250ms ease-in" : "fade-out 300ms ease-out"
         }
         // minH={{ base: "100vh", lg: "95vh" }}
-        minH="30vh"
+        minH="50vh"
         {...props}
       >
         {children}
-        <Box
+        {/* <Box
           zIndex="-1"
           bg={bg}
           position="fixed"
@@ -40,7 +40,7 @@ export const Section = forwardRef(
           left="0"
           top="0"
           pointerEvents="none"
-        ></Box>
+        ></Box> */}
       </Box>
     );
   },

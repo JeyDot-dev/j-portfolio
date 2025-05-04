@@ -3,10 +3,11 @@ import { Nav } from "../layout/Nav";
 import { ThemeSwitchButton } from "../ui/themeSwitchButton";
 import { ColorModeButton } from "../chakra/color-mode";
 import { useContentContext } from "../context/contentProvider";
-import { useRef, useEffect } from "react";
+import { useRef } from "react";
 
 export const NavBar = ({ themeHandler, anchorLinks = {}, ...props }) => {
   const { language, toggleLanguage, content } = useContentContext();
+  const headerRef = useRef(null);
   const handleClick = (anchor) => {
     const elementId = anchor;
     if (elementId) {
@@ -19,28 +20,14 @@ export const NavBar = ({ themeHandler, anchorLinks = {}, ...props }) => {
       }
     }
   };
-  const scrollPos = useRef({ current: "0", old: "0" });
-  const headerRef = useRef(null);
 
-  const handleScroll = () => {
-    const currentScroll = window.scrollY;
-    if (currentScroll > scrollPos.current.old && headerRef.current) {
-      headerRef.current.style.transform = "translateY(-200px)";
-    } else if (headerRef.current) {
-      headerRef.current.style.transform = "translateY(0)";
-    }
-    scrollPos.current.old = currentScroll;
-  };
-
-  console.log("LINK:", content.navBar.download.link[language]);
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
   return (
-    <Nav justify="space-between" {...props}>
+    <Nav
+      ref={headerRef}
+      justify="space-between"
+      backdropFilter="blur(6px)"
+      {...props}
+    >
       <Box
         display="flex"
         gap="1.3rem"
@@ -91,7 +78,15 @@ export const NavBar = ({ themeHandler, anchorLinks = {}, ...props }) => {
             </List.Item>
           );
         })}
-        <Link href={content.navBar.download.link[language]} download>
+        <Link
+          href={content.navBar.download.link[language]}
+          bg="accent.bg"
+          px="1rem"
+          py="0.5rem"
+          rounded="3xl"
+          textStyle="md"
+          download
+        >
           {content.navBar.download.label[language]}
         </Link>
       </List.Root>

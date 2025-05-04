@@ -24,6 +24,8 @@ import { BsBootstrapFill } from "react-icons/bs";
 import { FaGitAlt, FaDocker } from "react-icons/fa6";
 import CppLogo from "../../assets/cppModified.svg?react";
 import CLogo from "../../assets/c.svg?react";
+import CVEN from "../../assets/CVEN.pdf";
+import CVFR from "../../assets/CVFR.pdf";
 
 export const content = {
   skills: {
@@ -75,8 +77,8 @@ export const content = {
         fr: "Téléchargez mon CV (fr)",
       },
       link: {
-        en: "../../public/CVEN.pdf",
-        fr: "../../public/CVFR.pdf",
+        en: CVEN, // TEMPORARY ASSET BEFORE SELF HOST
+        fr: CVFR,
       },
     },
   },

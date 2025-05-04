@@ -13,6 +13,7 @@ import {
 import { toaster } from "../chakra/toaster";
 import * as Yup from "yup";
 import { useContentContext } from "../context/contentProvider";
+import { useBreakpointValue } from "@chakra-ui/react";
 
 const schema = Yup.object({
   name: Yup.string().required("Name is required."),
@@ -35,6 +36,27 @@ const schema = Yup.object({
 export function ContactMeSection({ ...props }) {
   const { language, content } = useContentContext();
   const formRef = useRef();
+  const isMobile = useBreakpointValue(
+    { base: true, lg: false },
+    { fallback: false },
+  );
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (isMobile) {
+        window.scrollTo({
+          top: document.body.scrollHeight,
+          behavior: "smooth",
+        });
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [isMobile]);
+
   useEffect(() => {
     emailjs.init({
       publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
@@ -57,11 +79,9 @@ export function ContactMeSection({ ...props }) {
     setCanSubmit("no");
     const formData = new FormData(formRef.current);
     const data = Object.fromEntries(formData.entries());
-    console.log("Before validation: ", data);
     schema
       .validate(data, { abortEarly: false })
       .then((data) => {
-        console.log("YAY: ", data);
         return emailjs.send("default_service", "template_2jyfok3", data);
       })
       .then(() => {
@@ -91,13 +111,18 @@ export function ContactMeSection({ ...props }) {
   };
 
   return (
-    <Section {...props}>
-      <Heading textAlign="center" mb="10rem">
+    <Section
+      // display="flex"
+      // flexDirection="column"
+      // alignItems="center"
+      // justifyContent="center"
+      {...props}
+    >
+      <Heading textAlign="center" mb="10vh">
         {content.contact.text[language]}
       </Heading>
       <Box
         as="form"
-        mt="auto"
         display="flex"
         flexDirection="column"
         ref={formRef}

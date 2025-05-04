@@ -30,7 +30,7 @@ export function ProjectCard({
           h="100%"
           bgSize="cover"
           bgImage={{ base: `url(${animatedLink})`, lg: `url(${imageLink})` }}
-          transition="background-image 0.3s ease-in-out"
+          // transition="background-image 0.4s ease-in-out"
           zIndex="base"
           _hover={{
             bgImage: `url(${animatedLink})`,

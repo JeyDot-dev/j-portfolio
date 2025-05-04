@@ -14,11 +14,10 @@ export function ProjectsSection(props) {
   // const [isVisible] = useIntersectionObserver(refs, breakpoint, "0% 0% 0% 0%");
   return (
     <Section
-      bg="prim.subtle"
+      // bg="prim.subtle"
       colorPalette="prim"
       id="projects-section"
       px="3vw"
-      minH="50vh"
       display="flex"
       flexDirection="column"
       align="center"

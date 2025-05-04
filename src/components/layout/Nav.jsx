@@ -47,7 +47,7 @@ export const Nav = ({ children, ...props }) => {
       </Drawer.Trigger>
       <Drawer.Positioner>
         <Drawer.Content
-          bg={props.bg ? props.bg : "accent.bg"}
+          // bg={props.bg ? props.bg : "accent.bg"}
           pb="2rem"
           {...props}
         >

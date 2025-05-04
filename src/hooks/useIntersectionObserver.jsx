@@ -23,7 +23,7 @@ export function useIntersectionObserver(
       (entries) => {
         const updatedObservedElements = entries.reduce((acc, entry) => {
           acc[entry.target.id] = entry.isIntersecting;
-          console.log(`Visible: ${entry.target.id} | ${entry.isIntersecting}`);
+          // console.log(`Visible: ${entry.target.id} | ${entry.isIntersecting}`);
           return acc;
         }, {});
         setObservedElements((prev) => ({

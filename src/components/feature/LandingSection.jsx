@@ -1,9 +1,21 @@
 import { Section } from "../layout/Section";
-import { VStack, Heading, Text } from "@chakra-ui/react";
+import { VStack, Heading, Text, Button } from "@chakra-ui/react";
 import { useContentContext } from "../context/contentProvider";
 
 export function LandingSection({ children, ...props }) {
   const { content, language } = useContentContext();
+  const handleClick = (anchor) => {
+    const elementId = anchor;
+    if (elementId) {
+      const element = document.getElementById(elementId);
+      if (element) {
+        element.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+    }
+  };
   return (
     <Section
       display="flex"
@@ -37,7 +49,7 @@ export function LandingSection({ children, ...props }) {
           {content.landing.text[language]}
         </Text>
       </VStack>
-      <Text
+      <Button
         id="Scroll-hint-placeholder"
         mt="10vh"
         textStyle={{ base: "5xl", xl: "7xl" }}
@@ -47,9 +59,11 @@ export function LandingSection({ children, ...props }) {
         animationTimingFunction="ease-in-out"
         animationIterationCount="infinite"
         data-state="open"
+        variant="plain"
+        onClick={() => handleClick("aboutme-section")}
       >
         V
-      </Text>
+      </Button>
     </Section>
   );
 }
