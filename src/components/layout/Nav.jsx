@@ -3,11 +3,9 @@ import {
   Drawer,
   Button,
   Box,
-  VStack,
   HStack,
 } from "@chakra-ui/react";
 import { CiMenuBurger } from "react-icons/ci";
-import { useRef } from "react";
 /**
  * A responsive navigation component that adapts to mobile and desktop layouts.
  * On mobile, it displays a drawer menu triggered by a button. On desktop, it displays

@@ -1,13 +1,4 @@
-import {
-  Card,
-  Image,
-  Box,
-  Text,
-  List,
-  Heading,
-  HStack,
-  Link,
-} from "@chakra-ui/react";
+import { Card, Box, Text, Heading, HStack, Link } from "@chakra-ui/react";
 import { ObjectToIconListWithTooltip } from "./ObjectToIconListWithTooltip";
 import { filterSkills } from "../context/content";
 

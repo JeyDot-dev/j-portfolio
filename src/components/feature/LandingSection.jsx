@@ -1,12 +1,9 @@
-import React from "react";
 import { Section } from "../layout/Section";
-import { VStack, Icon, Heading, Box, Text } from "@chakra-ui/react";
+import { VStack, Heading, Text } from "@chakra-ui/react";
 import { useContentContext } from "../context/contentProvider";
-import { useVisibilityContext } from "../context/VisibilityProvider";
 
 export function LandingSection({ children, ...props }) {
   const { content, language } = useContentContext();
-  const { isVisible } = useVisibilityContext;
   return (
     <Section
       display="flex"
