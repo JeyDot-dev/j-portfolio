@@ -1,9 +1,18 @@
 import { useEffect, useRef, useState } from "react";
-import { Section } from "../layout/section";
+import { Section } from "../layout/Section";
 import emailjs from "@emailjs/browser";
-import { Field, Input, Box, Button, Textarea, Spinner } from "@chakra-ui/react";
+import {
+  Field,
+  Input,
+  Box,
+  Button,
+  Textarea,
+  Spinner,
+  Heading,
+} from "@chakra-ui/react";
 import { toaster } from "../chakra/toaster";
 import * as Yup from "yup";
+import { useContentContext } from "../context/contentProvider";
 
 const schema = Yup.object({
   name: Yup.string().required("Name is required."),
@@ -24,6 +33,7 @@ const schema = Yup.object({
 });
 
 export function ContactMeSection({ ...props }) {
+  const { language, content } = useContentContext();
   const formRef = useRef();
   useEffect(() => {
     emailjs.init({
@@ -79,32 +89,56 @@ export function ContactMeSection({ ...props }) {
         setCanSubmit("yes");
       });
   };
-  console.log(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
 
   return (
     <Section {...props}>
-      <Box as="form" ref={formRef} onSubmit={handleSubmit}>
-        <Field.Root id="name-field" required>
-          <Field.Label>Name</Field.Label>
-          <Input name="name" placeholder="John Doe" />
-        </Field.Root>
+      <Heading textAlign="center" mb="10rem">
+        {content.contact.text[language]}
+      </Heading>
+      <Box
+        as="form"
+        mt="auto"
+        display="flex"
+        flexDirection="column"
+        ref={formRef}
+        onSubmit={handleSubmit}
+        gap="5"
+        w="75vw"
+        maxW="70rem"
+        mx="auto"
+      >
+        <Box
+          display="flex"
+          // gap={{ base: "5", sm: "5" }}
+          gap="5"
+          flexDirection={{ base: "column", sm: "row" }}
+          justify="center"
+        >
+          <Field.Root id="name-field" required>
+            <Field.Label>{content.contact.name[language]}</Field.Label>
+            <Input name="name" placeholder="John Titor" autoComplete="on" />
+          </Field.Root>
 
-        <Field.Root required>
-          <Field.Label>Email</Field.Label>
-          <Input
-            name="email"
-            placeholder="JohnDoe@example.com"
-            type="email"
-            required
-          />
-        </Field.Root>
+          <Field.Root required>
+            <Field.Label>Email</Field.Label>
+            <Input
+              name="email"
+              placeholder={content.contact.emailLabel[language]}
+              type="email"
+              autoComplete="on"
+              required
+            />
+          </Field.Root>
+        </Box>
 
         <Field.Root required>
           <Field.Label>Message</Field.Label>
           <Textarea
             name="message"
             minLength="3"
-            placeholder="Hi~"
+            placeholder={content.contact.messageLabel[language]}
+            size="lg"
+            autoresize
             required
           ></Textarea>
         </Field.Root>
@@ -115,7 +149,7 @@ export function ContactMeSection({ ...props }) {
           style={{ display: "none" }}
           autoComplete="off"
         />
-        <Button type="submit" disabled={canSubmit !== "yes"}>
+        <Button type="submit" disabled={canSubmit !== "yes"} variant="ghost">
           {canSubmit === "no" ? (
             <Spinner />
           ) : canSubmit === "cooldown" ? (

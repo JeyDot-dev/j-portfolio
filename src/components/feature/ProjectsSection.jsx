@@ -1,33 +1,44 @@
-import { Flex } from "@chakra-ui/react";
-import { Section } from "../layout/section";
+import { Flex, Text, Link } from "@chakra-ui/react";
+import { Section } from "../layout/Section";
 import { ProjectCard } from "../ui/ProjectCard";
 import { useContentContext } from "../context/contentProvider";
+import { createContext, useContext, useEffect, useRef, useMemo } from "react";
+import { useIntersectionObserver } from "../../hooks/useIntersectionObserver";
+import { useBreakpointValue } from "@chakra-ui/react";
 
 export function ProjectsSection(props) {
   const { language, content } = useContentContext();
+  // const refs = { "projects-section": useRef() };
+  // const isMobile = useBreakpointValue(
+  //   { base: true, xl: false },
+  //   { fallback: false },
+  // );
+  // const breakpoint = isMobile ? 0.2 : 0.6;
+  // const [isVisible] = useIntersectionObserver(refs, breakpoint, "0% 0% 0% 0%");
   return (
     <Section
       bg="prim.subtle"
       colorPalette="prim"
       id="projects-section"
-      py="3vh"
       px="3vw"
-      minH="100vh"
+      minH="50vh"
       display="flex"
       flexDirection="column"
       align="center"
       justify="center"
+      gap="8rem"
+      // ref={refs["projects-section"]}
       {...props}
+      // isVisible={isVisible["projects-section"]}
     >
       <Flex
-        px={{ "base": "2vw", "xl": "8vw", "2xl": "14vw" }}
+        px={{ "base": "0", "xl": "8vw", "2xl": "14vw" }}
         wrap="wrap"
         direction={{ base: "column", xl: "row" }}
         gap="6.5rem"
         justify="space-around"
         align="center"
         alignItems="center"
-        my="auto"
       >
         {content.projects.cards.map((card) => {
           return (
@@ -50,6 +61,14 @@ export function ProjectsSection(props) {
           );
         })}
       </Flex>
+      <Text
+        w="100%"
+        textAlign="center"
+        textStyle={{ base: "xl", md: "5xl" }}
+        color="prim.hard"
+      >
+        {content.projects.checkGithub[language]}
+      </Text>
     </Section>
   );
 }

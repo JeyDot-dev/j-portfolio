@@ -27,10 +27,9 @@ export function ProjectCard({
   return (
     <Card.Root
       size="lg"
-      w="24rem"
-      h="30rem"
-      maxW="100%"
-      minW="24rem"
+      w="370px"
+      h="32rem"
+      maxW="370px"
       rounded="lg"
       {...props}
     >
@@ -39,7 +38,7 @@ export function ProjectCard({
           w="100%"
           h="100%"
           bgSize="cover"
-          bgImage={`url(${imageLink})`}
+          bgImage={{ base: `url(${animatedLink})`, lg: `url(${imageLink})` }}
           transition="background-image 0.3s ease-in-out"
           zIndex="base"
           _hover={{

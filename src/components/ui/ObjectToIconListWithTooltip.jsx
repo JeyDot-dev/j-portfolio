@@ -26,19 +26,28 @@ import { Tooltip } from "../chakra/tooltip";
  *   My Icons
  * </ObjectToIconListWithTooltip>
  */
-export function ObjectToIconListWithTooltip(
-  { items, tooltipProps = {}, iconProps = {}, children = null },
+export function ObjectToIconListWithTooltip({
+  items,
+  listProps = {},
+  tooltipProps = {},
+  iconProps = {},
+  children = null,
   ...props
-) {
+}) {
   return (
     <Box {...props}>
-      {children && <Heading my="auto">{children}</Heading>}
+      {children && (
+        <Heading my="auto" mb="1rem">
+          {children}
+        </Heading>
+      )}
       <List.Root
         flexDirection="row"
         variant="plain"
         gap="3"
         flexWrap="wrap"
         w="100%"
+        {...listProps}
       >
         {items && Object.keys(items).length > 0 ? (
           Object.entries(items).map(([key, value]) => {

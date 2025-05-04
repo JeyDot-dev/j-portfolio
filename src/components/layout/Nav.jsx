@@ -7,6 +7,7 @@ import {
   HStack,
 } from "@chakra-ui/react";
 import { CiMenuBurger } from "react-icons/ci";
+import { useRef } from "react";
 /**
  * A responsive navigation component that adapts to mobile and desktop layouts.
  * On mobile, it displays a drawer menu triggered by a button. On desktop, it displays
@@ -49,14 +50,17 @@ export const Nav = ({ children, ...props }) => {
       <Drawer.Positioner>
         <Drawer.Content
           bg={props.bg ? props.bg : "accent.bg"}
-          align="center"
+          pb="2rem"
           {...props}
-          h="20%"
         >
-          <Drawer.Body>
-            <VStack h="100%" justify="center" gap="20%">
-              {children}
-            </VStack>
+          <Drawer.Body
+            display="flex"
+            flexDirection="column"
+            justifyItems="center"
+            alignItems="center"
+            gap="2rem"
+          >
+            {children}
           </Drawer.Body>
         </Drawer.Content>
       </Drawer.Positioner>

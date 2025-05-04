@@ -5,12 +5,13 @@ import { Button } from "@chakra-ui/react";
  *
  * @param {Object} props - Additional props to pass to the Button component.
  * @param {"previous" | "next" | "reset"} action - The action to perform (e.g., switch to the previous theme, next theme, or reset theme).
- * @param {Function} themeHandler - The function to handle the theme switching logic.
+ * @param {Function} handler - The function to handle the theme switching logic.
+ * @param {React.ReactNode} [children] - Optional children to render inside the button. Defaults to a label based on the action.
  *
  * @returns {JSX.Element} The theme switch button component.
  */
 
-export const ThemeSwitchButton = ({ action, handler, ...props }) => {
+export const ThemeSwitchButton = ({ action, handler, children, ...props }) => {
   const labels = {
     previous: "Previous Theme",
     next: "Next Theme",
@@ -19,7 +20,7 @@ export const ThemeSwitchButton = ({ action, handler, ...props }) => {
 
   return (
     <Button onClick={() => handler({ type: action })} w="9rem" {...props}>
-      {labels[action]}
+      {children ? children : labels[action]}
     </Button>
   );
 };

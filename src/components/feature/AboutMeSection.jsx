@@ -10,7 +10,7 @@ import {
 import PortraitLogo from "../../assets/42portraitLogo.svg?react";
 import { useContentContext } from "../context/contentProvider";
 import { ObjectToIconListWithTooltip } from "../ui/ObjectToIconListWithTooltip";
-import { Section } from "../layout/section";
+import { Section } from "../layout/Section";
 import { content, filterSkills } from "../context/content";
 
 const skills = [
@@ -19,14 +19,13 @@ const skills = [
   ["tools", filterSkills(content.aboutMe.tools)],
 ];
 
-export function AboutMeSection(props) {
+export function AboutMeSection({ ...props }) {
   const { language, content } = useContentContext();
   return (
     <Section
       bg="bg"
       colorPalette="default"
       id="aboutme"
-      pt="0"
       px="3vw"
       display="flex"
       flexDirection="column"
@@ -40,6 +39,7 @@ export function AboutMeSection(props) {
         justify={{ base: "center", xl: "space-between" }}
         align="center"
         textAlign="start"
+        gap="8rem"
         minW="80vw"
         my="auto"
         mx="auto"
@@ -58,12 +58,13 @@ export function AboutMeSection(props) {
           <Text>{content.aboutMe.personal[language]}</Text>
         </VStack>
         <Box w={{ base: "100%", sm: "28rem" }}>
-          <List.Root variant="plain" color="accent.fg" gap="12">
+          <List.Root variant="plain" color="accent.fg" gap="2rem">
             {skills.map(([title, items]) => {
               return (
                 <ObjectToIconListWithTooltip
                   key={`aboutme-skills-${title}`}
                   items={items}
+                  listProps={{ gap: "1rem" }}
                 >
                   {title}
                 </ObjectToIconListWithTooltip>
