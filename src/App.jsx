@@ -84,5 +84,10 @@ function App({ anchorLinks }) {
     </>
   );
 }
+//TODO fix: card width/margins for narrow devices
+//TODO fix: weird aspect ratios (1920:9XX)
+//TODO upgrade: les clunky animations
+//TODO feature: Auto scroll when opening virtual keyboard
+//TODO feature: Photography section (modal)
 
 export default App;
