@@ -1,10 +1,7 @@
-import { Flex, Text, Link } from "@chakra-ui/react";
+import { Flex, Text } from "@chakra-ui/react";
 import { Section } from "../layout/Section";
 import { ProjectCard } from "../ui/ProjectCard";
 import { useContentContext } from "../context/contentProvider";
-import { createContext, useContext, useEffect, useRef, useMemo } from "react";
-import { useIntersectionObserver } from "../../hooks/useIntersectionObserver";
-import { useBreakpointValue } from "@chakra-ui/react";
 
 export function ProjectsSection(props) {
   const { language, content } = useContentContext();

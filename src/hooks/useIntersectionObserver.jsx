@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 
 // const refs = {
 //   heading: useRef(null), // Ref for the heading element

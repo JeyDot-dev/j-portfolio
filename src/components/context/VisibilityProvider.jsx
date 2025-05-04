@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useRef, useMemo } from "react";
+import { createContext, useContext, useRef } from "react";
 import { useIntersectionObserver } from "../../hooks/useIntersectionObserver";
 import { useBreakpointValue } from "@chakra-ui/react";
 
