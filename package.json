@@ -1,5 +1,6 @@
 {
   "name": "j-portfolio",
+  "homepage": "https://JeyDot-dev.github.io/j-portfolio",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -8,13 +9,15 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@chakra-ui/react": "^3.16.1",
     "@emailjs/browser": "^4.4.1",
     "@emotion/react": "^11.14.0",
-    "motion": "^12.9.2",
+    "gh-pages": "^6.3.0",
     "next-themes": "^0.4.6",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
