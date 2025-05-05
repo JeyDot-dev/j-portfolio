@@ -118,7 +118,7 @@ export function ContactMeSection({ ...props }) {
       // justifyContent="center"
       {...props}
     >
-      <Heading textAlign="center" mb="10vh">
+      <Heading mt="10%" textAlign="center" mb="10vh" size="2xl">
         {content.contact.text[language]}
       </Heading>
       <Box
@@ -174,7 +174,12 @@ export function ContactMeSection({ ...props }) {
           style={{ display: "none" }}
           autoComplete="off"
         />
-        <Button type="submit" disabled={canSubmit !== "yes"} variant="ghost">
+        <Button
+          type="submit"
+          disabled={canSubmit !== "yes"}
+          variant="ghost"
+          size="2xl"
+        >
           {canSubmit === "no" ? (
             <Spinner />
           ) : canSubmit === "cooldown" ? (

@@ -44,7 +44,7 @@ export function AboutMeSection({ ...props }) {
         my="auto"
         mx="auto"
       >
-        <VStack w={{ base: "100%", sm: "28rem" }} gap="9" pb="0">
+        <VStack w={{ base: "100%", sm: "28rem" }} gap="9" pb="0" textStyle="md">
           <Icon w="80vw" h="80vw" maxH="350px" maxW="350px">
             <PortraitLogo />
           </Icon>

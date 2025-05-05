@@ -1,6 +1,7 @@
 import { Section } from "../layout/Section";
-import { VStack, Heading, Text, Button } from "@chakra-ui/react";
+import { VStack, Heading, Text, Button, Icon } from "@chakra-ui/react";
 import { useContentContext } from "../context/contentProvider";
+import { MdKeyboardArrowDown } from "react-icons/md";
 
 export function LandingSection({ children, ...props }) {
   const { content, language } = useContentContext();
@@ -22,8 +23,9 @@ export function LandingSection({ children, ...props }) {
       flexDirection="column"
       id="landing"
       textAlign="center"
-      pt="10vh"
+      pt="8rem"
       minH="50vh"
+      mt="0"
       {...props}
     >
       <VStack gap={{ base: "6vh", sm: "10vh" }} align="center">
@@ -51,7 +53,7 @@ export function LandingSection({ children, ...props }) {
       </VStack>
       <Button
         id="Scroll-hint-placeholder"
-        mt="10vh"
+        mt="20%"
         textStyle={{ base: "5xl", xl: "7xl" }}
         color="accent.fg"
         animationName="bounce"
@@ -62,7 +64,9 @@ export function LandingSection({ children, ...props }) {
         variant="plain"
         onClick={() => handleClick("aboutme-section")}
       >
-        V
+        <Icon h="6rem" w="6rem" _hover={{ h: "7rem", w: "7rem" }}>
+          <MdKeyboardArrowDown />
+        </Icon>
       </Button>
     </Section>
   );

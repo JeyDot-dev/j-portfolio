@@ -50,7 +50,7 @@ function App({ anchorLinks }) {
       >
         <LandingSection
           // bg="bg"
-          minH="60vh"
+          minH="90vh"
           id="landing-section"
           ref={refs["landing-section"]}
           isVisible={isVisible["landing-section"]}
@@ -66,6 +66,7 @@ function App({ anchorLinks }) {
         />
         <ProjectsSection
           // bg="prim.subtle"
+          mt="5vh"
           colorPalette="sec"
           id="projects-section"
           ref={refs["projects-section"]}
@@ -77,7 +78,7 @@ function App({ anchorLinks }) {
           id="contactme-section"
           ref={refs["contactme-section"]}
           isVisible={isVisible["contactme-section"]}
-          minH="70vh"
+          minH="95vh"
         ></ContactMeSection>
         <Toaster />
       </Box>

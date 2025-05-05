@@ -87,11 +87,13 @@ export const content = {
     heading: {
       en: {
         name: "Hi, I'm Johan",
-        title: "An Aspiring Developer",
+        // title: "An Aspiring Developer",
+        title: "Developer",
       },
       fr: {
         name: "Salut, moi c'est Johan",
-        title: "Développeur en devenir",
+        // title: "Développeur en devenir",
+        title: "Développeur",
       },
     },
     subHeading: {
