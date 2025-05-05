@@ -22,6 +22,7 @@ export const Section = forwardRef(
         w="100%"
         position="relative"
         px={{ base: "10%", lg: "15%" }}
+        pt="6rem"
         opacity={isVisible ? 1 : 0}
         animation={
           isVisible ? "fade-in 250ms ease-in" : "fade-out 300ms ease-out"

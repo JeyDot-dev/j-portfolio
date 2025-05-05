@@ -45,12 +45,12 @@ function App({ anchorLinks }) {
         as="main"
         display="flex"
         flexDirection="column"
-        gap="0"
+        gap="8rem"
         justifyContent="flex-start"
       >
         <LandingSection
           // bg="bg"
-          // minH="90vh"
+          minH="60vh"
           id="landing-section"
           ref={refs["landing-section"]}
           isVisible={isVisible["landing-section"]}

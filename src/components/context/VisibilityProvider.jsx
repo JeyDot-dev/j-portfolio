@@ -13,7 +13,7 @@ export const VisibilityProvider = ({ anchorLinks, children }) => {
     { base: true, xl: false },
     { fallback: false },
   );
-  const breakpoint = isMobile ? 0.28 : 0.67;
+  const breakpoint = isMobile ? 0.28 : 0.5;
   const [isVisible] = useIntersectionObserver(refs, breakpoint, "0% 0% 0% 0%");
   return (
     <VisibilityContext.Provider value={{ isVisible: isVisible, refs: refs }}>
