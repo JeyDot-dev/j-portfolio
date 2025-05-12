@@ -109,7 +109,7 @@ export const content = {
   aboutMe: {
     intro: {
       en: [
-        "I'm a developer based in Switzerland who has completed 42Lausanne's common core and currently focuses on React and Android development using Kotlin. After exploring several paths, I found my passion in building smart, interactive user experiences, tools and more. I’m especially excited about combining creativity and clean code to bring personal projects to life like my soon-to-be-born",
+        "I'm a developer based in Switzerland who has completed 42Lausanne's common core and currently focused on Java and SQL. After exploring several paths, I found my passion in building smart, interactive user experiences, tools and more. I’m especially excited about combining creativity and clean code to bring personal projects to life like my soon-to-be-born",
         <Link
           key="kaamelott-2mn"
           href="https://youtu.be/cKKNPqScqNI?t=169"
@@ -121,7 +121,7 @@ export const content = {
         "reference search engine...",
       ],
       fr: [
-        "Je suis un développeur basé en Suisse, diplômé du tronc commun de 42Lausanne, et je me concentre actuellement sur le développement React et Android avec Kotlin. Après avoir exploré plusieurs domaines, j'ai trouvé ma passion dans la création d'expériences utilisateurs interactives et intelligentes, d'outils et plus encore. J'aime particulièrement allier créativité et code propre pour donner vie à des projets personnels comme mon futur moteur de recherche de références",
+        "Je suis un développeur basé en Suisse, diplômé du tronc commun de 42Lausanne, et je me concentre actuellement sur le développement Java et SQL. Après avoir exploré plusieurs domaines, j'ai trouvé ma passion dans la création d'expériences utilisateurs interactives et intelligentes, d'outils et plus encore. J'aime particulièrement allier créativité et code propre pour donner vie à des projets personnels comme mon futur moteur de recherche de références",
         <Link
           key="kaamelott-2mn"
           href="https://youtu.be/cKKNPqScqNI?t=169"
